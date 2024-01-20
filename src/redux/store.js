@@ -1,8 +1,11 @@
-import {createStore} from "react-redux";
-import rootReducer from "./reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import songSlice from "./slices/songSlice";
 
-const store = createStore(
-    rootReducer,
-)
+const store = configureStore({
+        reducer: {
+            addSong: songSlice,
+        }
+    }
+);
 
 export default store;
