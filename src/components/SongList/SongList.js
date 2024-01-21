@@ -1,43 +1,21 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { addSong } from '../../redux/slices/songSlice';
-import {useState} from "react";
+import { useSelector } from "react-redux";
+import "./SongList.css"
 
 const SongList = () => {
-
-    const song = useSelector((state) => state.songs.songs);
-    const dispatch = useDispatch();
-
-    const [songs, setSongs] = useState([]);
-    const [selectedFile, setSelectedFile] = useState(null);
-    const addSong = (newSong) => {
-        setSongs([...songs, newSong]);
-    };
-
-    const updateSong = (index, updatedSong) => {
-        const updatedSongs = [...songs];
-        updatedSongs[index] = updatedSong;
-        setSongs(updatedSongs);
-    };
-
-    const removeSong = (index) => {
-        const updatedSongs = songs.filter((_, i) => i !== index);
-        setSongs(updatedSongs);
-    };
-
-    const handleFileChange = (event) => {
-        setSelectedFile(event.target.files[0]);
-    };
+    // const songs = useSelector(state => state.songs);
 
     return (
-        <div>
-            <input type="file" onChange={handleFileChange}/>
+        <div className="songList">
+           {/* <h2>Song List</h2>
             <ul>
-                {songs.map((song, index) => (
-                    <li key={index}>{song.songName} by {song.artistName}</li>
+                {songs.map((song) => (
+                    <li key={song.trackNumber}>
+                        {song.trackNumber}  {song.songName} by {song.artistName}
+                    </li>
                 ))}
-            </ul>
+            </ul>*/}
         </div>
-    )
-}
+    );
+};
 
-export default SongList
+export default SongList;
