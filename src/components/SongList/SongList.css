@@ -1,5 +1,67 @@
-.songList {
-    width: 50%;
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #706e6e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d5cccc;
+}
+
+.songList-wrapper {
+    width: 40%;
     height: 100%;
+    text-align: center;
+    padding: 50px 0 0 0;
+    overflow-y: scroll;
+}
+
+.songList-title {
+    height: 50px;
+}
+
+.song-list {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    width: 100%;
+    text-align: left;
+}
+
+.songList-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-top: 1px solid rgba(168, 162, 162, 0.89);
+}
+
+.track-number {
+    width: 10px;
+    margin: 0 20px 0 40px;
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image {
+    width: 110px;
+    height: 110px;
+    margin: 10px 0 10px 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.song-description {
+    width: 100%;
     text-align: center;
 }

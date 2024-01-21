@@ -1,8 +1,9 @@
-const createSong = (songName, artistName, trackNumber, file = null) => ({
+const createSong = (songName, artistName, trackNumber, file = null, image = null) => ({
     songName,
     artistName,
     trackNumber,
-    file
+    file,
+    image
 });
 
 export default createSong
