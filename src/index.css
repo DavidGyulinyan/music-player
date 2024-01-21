@@ -8,3 +8,15 @@
   font-weight: bold;
   /*border: 1px solid red;*/
 }
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

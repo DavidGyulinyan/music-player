@@ -1,10 +1,25 @@
-import {createStore} from "redux";
-import dataModel from "../redux/models/songModel"
+import { createStore } from 'redux';
+import dataModel from '../redux/models/songModel';
+
+// action types
+const ADD_NEW_SONG = 'ADD_NEW_SONG';
+const SET_CURRENT_SONG = 'SET_CURRENT_SONG';
+
+// action creators
+const addNewSong = (song) => ({
+    type: ADD_NEW_SONG,
+    payload: song,
+});
+
+const setCurrentSong = (song) => ({
+    type: SET_CURRENT_SONG,
+    payload: song,
+});
 
 
 const initialState = {
-
     songs: [
+
         dataModel(
             "Always Somewhere",
             "Scorpions",
@@ -32,33 +47,23 @@ const initialState = {
             4,
             process.env.PUBLIC_URL + "/music/Pink Floyd - Coming back to life.mp3",
             process.env.PUBLIC_URL + "/images/Pink-Floyd.jpeg"
-        ),
-        dataModel(
-            "Coming Back To Life",
-            "Pink Floyd",
-            5,
-            process.env.PUBLIC_URL + "/music/Pink Floyd - Coming back to life.mp3",
-            process.env.PUBLIC_URL + "/images/Pink-Floyd.jpeg"
-        ),
-dataModel(
-            "Coming Back To Life",
-            "Pink Floyd",
-            6,
-            process.env.PUBLIC_URL + "/music/Pink Floyd - Coming back to life.mp3",
-            process.env.PUBLIC_URL + "/images/Pink-Floyd.jpeg"
-        ),
-
+        )
     ],
-    currentSong: null
+    currentSong: null,
 };
 
 const reducer = (state = initialState, action) => {
-
     switch (action.type) {
-        case "add-new-song":
+        case ADD_NEW_SONG:
+            // logic to add a new song to the state
             return {
                 ...state,
-                currentSong: action.payload.currentSong
+                songs: [...state.songs, action.payload],
+            };
+        case SET_CURRENT_SONG:
+            return {
+                ...state,
+                currentSong: action.payload,
             };
         default:
             return state;
@@ -67,4 +72,5 @@ const reducer = (state = initialState, action) => {
 
 const store = createStore(reducer);
 
+export { addNewSong, setCurrentSong };
 export default store;

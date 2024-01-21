@@ -1,17 +1,28 @@
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import "./SongList.css"
+import { setCurrentSong } from '../../redux/store'
 
 const SongList = () => {
     const songs = useSelector(state => state.songs);
+    const currentSong = useSelector(state => state.currentSong);
+    const dispatch = useDispatch();
+
+    const playSong = (song) => {
+        dispatch(setCurrentSong(song));
+    };
 
     return (
         <div className="songList-wrapper">
             <h2 className="songList-title">Song List</h2>
-            <div className="song-list">
+            <div className="song-list flex-center">
                 <ul>
                     {songs.map(song => (
-                        <li key={song.trackNumber} className="songList-item">
-                            <div className="image-wrapper">
+                        <li
+                            key={song.trackNumber}
+                            className="justify-between"
+                            onClick={playSong}
+                        >
+                            <div className="image-wrapper justify-between">
                                 <div className="track-number">
                                     {song.trackNumber}
                                 </div>
