@@ -1,4 +1,5 @@
-const createSong = (songName, artistName, trackNumber, file = null, image = null) => ({
+const createSong = (id, songName, artistName, trackNumber, file = null, image = null) => ({
+    id,
     songName,
     artistName,
     trackNumber,
