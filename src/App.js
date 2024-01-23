@@ -22,6 +22,10 @@ function App() {
                     </div>
                 </div>
             </header>
+
+            <main>
+
+            </main>
         </div>
     );
 }
