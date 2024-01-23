@@ -1,42 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,200;1,300&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold;
-  border: 1px solid red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    /*border: 1px solid red;*/
 }
 
 /*Common flexible styles defined globally*/
-.flex-center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.justify-between{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.justify-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.justify-around{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.justify-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.justify-start{
-  display: flex;
-  justify-content: start;
-  align-items: center;
+.justify-start {
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 .justify-column {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

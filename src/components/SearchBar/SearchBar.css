@@ -1,5 +1,5 @@
 .search-bar-container {
-    width: 48%;
+    width: 60%;
     height: 35px;
     border-radius: 7px;
     border: 1px solid #706e6e;
@@ -17,6 +17,6 @@ input[type="search"]{
 /* Media Queries for responsiveness */
 @media (max-width: 640px) {
       .search-bar-container {
-        width: 70%;
+        width: 100%;
     }
 }

@@ -1,0 +1,11 @@
+.row {
+    width: 97%;
+    height: 45px;
+    border-bottom:1px solid #030303;
+    display: grid;
+    grid-template-columns: .3fr 1fr 1fr .4fr .5fr;
+}
+
+.row-section {
+
+}

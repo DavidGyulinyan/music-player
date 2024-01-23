@@ -3,7 +3,8 @@ import dataModel from '../redux/models/songModel';
 
 // action types
 const ADD_NEW_SONG = 'ADD_NEW_SONG';
-const SET_CURRENT_SONG = 'SET_CURRENT_SONG';
+const PLAY_ALL_SONGS = "PLAY_ALL_SONGS";
+const ADD_ALL_SONGS = "ADD_ALL_SONGS";
 
 // action creators
 const addNewSong = (song) => ({
@@ -11,16 +12,20 @@ const addNewSong = (song) => ({
     payload: song,
 });
 
-const setCurrentSong = (song) => ({
-    type: SET_CURRENT_SONG,
-    payload: song,
+const playAllSongs = () => ({
+    type: PLAY_ALL_SONGS,
 });
+
+const addAllSongs = () => ({
+    type: ADD_ALL_SONGS,
+})
 
 
 const initialState = {
     songs: [
 
         dataModel(
+            Math.random().toString(36).substring(2),
             "Always Somewhere",
             "Scorpions",
             1,
@@ -28,6 +33,7 @@ const initialState = {
             process.env.PUBLIC_URL + "/images/Scorpions.jpg"
         ),
         dataModel(
+            Math.random().toString(36).substring(2),
             "Bed Of Roses",
             "Bon Jovi",
             2,
@@ -35,6 +41,7 @@ const initialState = {
             process.env.PUBLIC_URL + "/images/Bon-Jovi.jpeg"
         ),
         dataModel(
+            Math.random().toString(36).substring(2),
             "Crazy",
             "Aerosmith",
             3,
@@ -42,14 +49,14 @@ const initialState = {
             process.env.PUBLIC_URL + "/images/Aerosmith.jpeg"
         ),
         dataModel(
+            Math.random().toString(36).substring(2),
             "Coming Back To Life",
             "Pink Floyd",
             4,
             process.env.PUBLIC_URL + "/music/Pink Floyd - Coming back to life.mp3",
             process.env.PUBLIC_URL + "/images/Pink-Floyd.jpeg"
         )
-    ],
-    currentSong: null,
+    ]
 };
 
 const reducer = (state = initialState, action) => {
@@ -60,11 +67,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 songs: [...state.songs, action.payload],
             };
-        case SET_CURRENT_SONG:
-            return {
-                ...state,
-                currentSong: action.payload,
-            };
+
+        case PLAY_ALL_SONGS:
+            console.log("Play All button clicked");
+            return state;
+
+        case ADD_ALL_SONGS:
+            console.log("Add All button clicked");
+            return state;
+
         default:
             return state;
     }
@@ -72,5 +83,5 @@ const reducer = (state = initialState, action) => {
 
 const store = createStore(reducer);
 
-export { addNewSong, setCurrentSong };
+export { addNewSong, playAllSongs, addAllSongs};
 export default store;

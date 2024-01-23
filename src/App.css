@@ -12,12 +12,12 @@ header {
     display: flex;
 }
 
-.header-col:nth-child(1){
-    width: 40%;
+.header-col:nth-child(1) {
+    width: 50%;
 }
 
-.header-col:nth-child(2){
-    width: 60%;
+.header-col:nth-child(2) {
+    width: 50%;
 }
 
 .header-col {
@@ -37,87 +37,62 @@ header {
     cursor: pointer;
 }
 
+.uploadForm-wrapper {
+    width: 100%;
+    padding: 50px 20px 0 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    height: 650px;
+}
+
+.main-title-row {
+    width: 97%;
+    height: 35px;
+    background-color: #dadada;
+    display: grid;
+    grid-template-columns: .3fr 1fr 1fr .4fr .5fr;
+}
+
+.main-title-row div {
+    border-right: 2px solid white;
+}
+
+.music-list-section {
+    width: 100%;
+}
+
+
 /* Media Queries for responsiveness */
-@media (max-width: 1440px) {
-    .header-col:nth-child(1){
-        width: 35%;
-    }
-
-    .header-col:nth-child(2){
-        width: 65%;
-    }
-}
-
-@media (max-width: 1280px) {
-    .header-col:nth-child(1){
-        width: 40%;
-    }
-
-    .header-col:nth-child(2){
-        width: 60%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .header-col:nth-child(1){
-        width: 30%;
-    }
-
-    .header-col:nth-child(2){
-        width: 70%;
-        justify-content: space-around;
-        padding: 0 0 0 0;
-    }
-
-    .button {
-        width: 80px;
-        padding: 3px;
-        gap: 7px;
-    }
-}
-
-@media (max-width: 768px) {
-    .cols-wrapper {
-        width: 100%;
-    }
-
-    .header-col:nth-child(1){
-        width: 27%;
-        padding: 0 0 0 10px;
-    }
-
-    .header-col:nth-child(2){
-        width: 72%;
-        justify-content: space-between;
-        padding: 0 0 0 0;
-    }
-
-    .button {
-        width: 65px;
-        padding: 2px;
-        gap: 2px;
-    }
-}
-
 @media (max-width: 640px) {
-    .cols-wrapper{
-        height: 170px;
+    .header-col:nth-child(1) {
+        width: 55%;
+        padding: 0 0 0 10px;
+        justify-content: start;
+    }
+
+    .header-col:nth-child(2) {
+        padding: 0 10px 0 0 ;
+    }
+
+    .container {
+        justify-content: space-between;
+        gap: 10px
+    }
+
+    .cols-wrapper {
         padding-top: 10px;
         justify-content: space-around;
         align-items: center;
-        flex-direction: column-reverse;
         gap: 12px;
-    }
-    .header-col {
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 25px;
     }
 
     .button {
-        width: 90px;
+        width: 95px;
         padding: 3px;
-        gap: 7px;
     }
 }
