@@ -35,7 +35,7 @@ function App() {
                     <SongList/>
                 </section>
                 <div className="uploadForm-wrapper">
-                    <MusicUploadForm/>
+                    <MusicUploadForm />
                 </div>
             </main>
         </div>

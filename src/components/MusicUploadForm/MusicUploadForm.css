@@ -1,5 +1,10 @@
+.upload-form {
+    max-width: 300px;
+    gap: 10px;
+}
+
 .file-upload-container {
-    width: 20%;
+    width: 100%;
     padding: 0 0 0 14px;
     cursor: pointer;
     border: 1px solid gray;
@@ -11,6 +16,14 @@
     width: 90%;
     cursor: pointer;
 
+}
+
+.upload-form-input {
+    width: 100%;
+    height: 40px;
+    padding: 4px 0 0 14px;
+    border: 1px solid gray;
+    border-radius: 3px;
 }
 
 input[type="file"] {
@@ -27,24 +40,18 @@ input[type="file"]::file-selector-button {
     border: none;
 }
 
-@media (max-width: 1280px) {
-    .file-upload-container {
-        width: 30%;
-    }
-
-    .custom-file-upload {
-        width: 90%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .file-upload-container {
-        width: 35%;
-    }
+.upload-form-button {
+    width: 50%;
+    height: 35px;
+    padding: 0 0 0 14px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: #fcf9f9;
 }
 
 @media (max-width: 640px) {
-    .file-upload-container {
-        width: 60%;
-    }
+   .uploadForm-wrapper {
+       justify-content: center;
+       align-items: center;
+   }
 }

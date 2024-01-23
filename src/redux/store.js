@@ -1,10 +1,11 @@
-import { createStore } from 'redux';
+import {createStore} from 'redux';
 import dataModel from '../redux/models/songModel';
 
 // action types
 const ADD_NEW_SONG = 'ADD_NEW_SONG';
 const PLAY_ALL_SONGS = "PLAY_ALL_SONGS";
 const ADD_ALL_SONGS = "ADD_ALL_SONGS";
+const FILTER_SONGS = "FILTER_SONGS";
 
 // action creators
 const addNewSong = (song) => ({
@@ -19,6 +20,13 @@ const playAllSongs = () => ({
 const addAllSongs = () => ({
     type: ADD_ALL_SONGS,
 })
+
+const filterSongs = (searchTerm) => {
+    return {
+        type: FILTER_SONGS,
+        searchTerm: searchTerm,
+    };
+};
 
 
 const initialState = {
@@ -62,7 +70,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_NEW_SONG:
-            // logic to add a new song to the state
             return {
                 ...state,
                 songs: [...state.songs, action.payload],
@@ -75,6 +82,17 @@ const reducer = (state = initialState, action) => {
         case ADD_ALL_SONGS:
             console.log("Add All button clicked");
             return state;
+        case FILTER_SONGS:
+            const searchTerm = action.searchTerm.toLowerCase();
+            const filteredSongs = state.songs.filter(
+                (song) =>
+                    song.songName.toLowerCase().includes(searchTerm) ||
+                    song.artistName.toLowerCase().includes(searchTerm)
+            );
+            return {
+                ...state,
+                filteredSongs: filteredSongs,
+            };
 
         default:
             return state;
@@ -83,5 +101,5 @@ const reducer = (state = initialState, action) => {
 
 const store = createStore(reducer);
 
-export { addNewSong, playAllSongs, addAllSongs};
+export {addNewSong, playAllSongs, addAllSongs, filterSongs};
 export default store;
