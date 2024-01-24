@@ -32,41 +32,39 @@ const filterSongs = (searchTerm) => {
 const initialState = {
     songs: [
 
+        // Initialize songs using the dataModel function
         dataModel(
             Math.random().toString(36).substring(2),
             "Always Somewhere",
             "Scorpions",
             1,
-            process.env.PUBLIC_URL + "/music/Scorpions - Always Somewhere.mp3",
-            process.env.PUBLIC_URL + "/images/Scorpions.jpg"
+            process.env.PUBLIC_URL + "/music/Scorpions - Always Somewhere.mp3"
         ),
         dataModel(
             Math.random().toString(36).substring(2),
             "Bed Of Roses",
             "Bon Jovi",
             2,
-            process.env.PUBLIC_URL + "/music/Bon Jovi - Bed Of Roses.mp3",
-            process.env.PUBLIC_URL + "/images/Bon-Jovi.jpeg"
+            process.env.PUBLIC_URL + "/music/Bon Jovi - Bed Of Roses.mp3"
         ),
         dataModel(
             Math.random().toString(36).substring(2),
             "Crazy",
             "Aerosmith",
             3,
-            process.env.PUBLIC_URL + "/music/Aerosmith - Crazy.mp3",
-            process.env.PUBLIC_URL + "/images/Aerosmith.jpeg"
+            process.env.PUBLIC_URL + "/music/Aerosmith - Crazy.mp3"
         ),
         dataModel(
             Math.random().toString(36).substring(2),
             "Coming Back To Life",
             "Pink Floyd",
             4,
-            process.env.PUBLIC_URL + "/music/Pink Floyd - Coming back to life.mp3",
-            process.env.PUBLIC_URL + "/images/Pink-Floyd.jpeg"
+            process.env.PUBLIC_URL + "/music/Pink Floyd - Coming back to life.mp3"
         )
     ]
 };
 
+// Reducer function
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_NEW_SONG:
@@ -82,24 +80,14 @@ const reducer = (state = initialState, action) => {
         case ADD_ALL_SONGS:
             console.log("Add All button clicked");
             return state;
-        case FILTER_SONGS:
-            const searchTerm = action.searchTerm.toLowerCase();
-            const filteredSongs = state.songs.filter(
-                (song) =>
-                    song.songName.toLowerCase().includes(searchTerm) ||
-                    song.artistName.toLowerCase().includes(searchTerm)
-            );
-            return {
-                ...state,
-                filteredSongs: filteredSongs,
-            };
-
         default:
             return state;
     }
 };
 
+// Create Redux store
 const store = createStore(reducer);
 
+// Export action creators and store
 export {addNewSong, playAllSongs, addAllSongs, filterSongs};
 export default store;

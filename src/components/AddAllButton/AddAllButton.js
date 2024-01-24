@@ -4,10 +4,10 @@ import {useDispatch} from "react-redux";
 import {addAllSongs} from "../../redux/store";
 
 const AddAllButton = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch()// Get the dispatch function from the Redux store
     const onAddAll = () => {
-        dispatch(addAllSongs())
-    }
+        dispatch(addAllSongs());// Dispatch the addAllSongs action when the button is clicked
+    };
 
     return (
         <>

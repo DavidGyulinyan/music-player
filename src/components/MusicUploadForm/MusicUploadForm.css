@@ -1,6 +1,7 @@
 .upload-form {
     max-width: 300px;
     gap: 10px;
+    position: relative;
 }
 
 .file-upload-container {

@@ -2,6 +2,7 @@ import "./SongList.css"
 import SongRow from "../SongRow/SongRow"
 import {useSelector} from "react-redux";
 
+// SongList component for displaying a list of songs
 const SongList = () => {
     const songs = useSelector(state => state.songs)
 
