@@ -2,17 +2,10 @@ import {createStore} from 'redux';
 import dataModel from '../redux/models/songModel';
 
 // action types
-const ADD_NEW_SONG = 'ADD_NEW_SONG';
 const PLAY_ALL_SONGS = "PLAY_ALL_SONGS";
 const ADD_ALL_SONGS = "ADD_ALL_SONGS";
-const FILTER_SONGS = "FILTER_SONGS";
 
 // action creators
-const addNewSong = (song) => ({
-    type: ADD_NEW_SONG,
-    payload: song,
-});
-
 const playAllSongs = () => ({
     type: PLAY_ALL_SONGS,
 });
@@ -20,13 +13,6 @@ const playAllSongs = () => ({
 const addAllSongs = () => ({
     type: ADD_ALL_SONGS,
 })
-
-const filterSongs = (searchTerm) => {
-    return {
-        type: FILTER_SONGS,
-        searchTerm: searchTerm,
-    };
-};
 
 
 const initialState = {
@@ -67,12 +53,6 @@ const initialState = {
 // Reducer function
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_NEW_SONG:
-            return {
-                ...state,
-                songs: [...state.songs, action.payload],
-            };
-
         case PLAY_ALL_SONGS:
             console.log("Play All button clicked");
             return state;
@@ -89,5 +69,5 @@ const reducer = (state = initialState, action) => {
 const store = createStore(reducer);
 
 // Export action creators and store
-export {addNewSong, playAllSongs, addAllSongs, filterSongs};
+export { playAllSongs, addAllSongs };
 export default store;

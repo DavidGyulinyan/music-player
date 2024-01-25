@@ -12,13 +12,6 @@
     border-radius: 3px;
     background-color: #fcf9f9;
 }
-
-.custom-file-upload {
-    width: 90%;
-    cursor: pointer;
-
-}
-
 .upload-form-input {
     width: 100%;
     height: 40px;
@@ -48,6 +41,46 @@ input[type="file"]::file-selector-button {
     border: 1px solid gray;
     border-radius: 3px;
     background-color: #fcf9f9;
+}
+
+.custom-file-upload {
+    width: 90%;
+    cursor: pointer;
+}
+
+.upload-message {
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    top: -30px;
+}
+
+.progress {
+    width: 0;
+    height: 25px;
+    padding: 0 0 0 5px;
+    background-color: gray;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    animation: progress linear 2s infinite normal;
+}
+
+.error-message {
+    color: red;
+    position: absolute;
+    top: -30px;
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+    }
+
+    100%{
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 640px) {
