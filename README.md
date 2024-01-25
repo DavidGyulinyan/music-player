@@ -23,7 +23,7 @@ To get started with the project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/music-player-app.git
+   git clone https://github.com/DavidGyulinyan/music-player-app.git
 
 
 ## Install dependencies
@@ -47,3 +47,6 @@ Open the application in your browser at http://localhost:3000.
 - Make your changes and commit them.
 - Push your changes to your fork.
 - Submit a pull request.
+
+
+This README file provides an overview of the project, its features, the technologies used, instructions for getting started, running tests, contributing to the project, and information about the project's license. You can customize it based on the specifics of your project.
